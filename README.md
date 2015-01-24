@@ -14,9 +14,10 @@ Jaianderson dos Santos
 Liara de Paula
 Maria Karoline
 Marijane Lucindo
-===========================================================================
+___________________________________________________________________________
 
 Project Development
+
 Software name: Blue Ivy
 
 Basic Description
