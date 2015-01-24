@@ -3,6 +3,7 @@ Projeto de sistema online para lojas
 
 ===========================================================================
 INSTITUTO FEDERAL DE EDUCAÇÃO E TECNOLOGIA DO RIO GRANDE DO NORTE - IFRN
+
 CAMPUS JOÃO CÂMARA
 
 CURSO TÉCNICO EM INFORMÁTICA
@@ -11,14 +12,11 @@ DISCIPLINA: Programação para Internet com Acesso a Banco de Dados
 COLABORADORES:
 
 Cyro Andreolle L Soares
-
 Jaianderson dos Santos
-
 Liara de Paula
-
 Maria Karoline
-
 Marijane Lucindo
+
 ___________________________________________________________________________
 
 Project Development
