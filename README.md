@@ -27,5 +27,5 @@ A linguagem de programação é o Java Versão 7.x.
 A IDE para desenvolvimento do Banco de Dados é o MySQL. Utilizamos o MySQLWorkbench como software de 
 auxílio na criação do Modelo Físico do BD.
 
-OBS.: Este arquivo é passível de alterações.
+OBS.: Este arquivo é passível de modificações.
 
