@@ -1,4 +1,4 @@
-# Blue_IvySYS_Arquives
+﻿# Blue_IvySYS_Arquives
 Projeto de sistema online para lojas
 
 ===========================================================================
@@ -13,7 +13,7 @@ DISCIPLINA: Programação para Internet com Acesso a Banco de Dados
 COLABORADORES:
 
 Cyro Andreolle L Soares, 
-Jaianderson dos Santos, 
+Jaianderson Santos, 
 Liara de Paula, 
 Maria Karoline, 
 Marijane Lucindo.
