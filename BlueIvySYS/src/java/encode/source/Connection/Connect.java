@@ -61,33 +61,5 @@ public class Connect {
         return status;
 
     }
-    
-    public static boolean CloseConnection() throws ClassNotFoundException {
-
-        try {
-
-            Connect.getConnection().close();
-
-            return true;
-
-        } catch (SQLException e) {
-
-            return false;
-
-        }
-
- 
-
-    }
-    public static Connect RestartConnection() throws SQLException, ClassNotFoundException {
-
-        CloseConnection();
-
- 
-
-        return Connect.getConnection();
-
-    }
-    
-    
+       
 }
