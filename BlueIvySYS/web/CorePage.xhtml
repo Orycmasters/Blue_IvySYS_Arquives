@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Tela de Login e Criação de User</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText value="Nome Completo: " />
+                <h:inputText value="#{userBean.name}" />
+                <h:outputText value="Login: " />
+                <h:inputText value="#{userBean.login}" />
+                <h:outputText value="Password: " />
+                <h:inputSecret value="#{userBean.password}" redisplay="true"/>
+                <h:outputText value="CPF (Descrito dessa forma: xxx.xxx.xxx-xx): " />
+                <h:inputText value="#{userBean.CPF}" />
+                <h:outputText value="Endereço Completo (Rua, Número, Bairro, Cidade, CEP, Estado): " />
+                <h:inputText value="#{userBean.adress}" />
+                <h:outputText value="Email: " />
+                <h:inputText value="#{userBean.email}" />
+                <h:outputText value="Telefone (Informe DDD): " />
+                <h:inputText value="#{userBean.phone}" />
+                <h:commandButton value="Enviar"
+                    actionListener="#{userBean.send}"/>
+                <br/>
+                
+                <h:outputText value="Seja Bem vindo(a), #{userBean.name}"
+                    rendered="#{userBean.name != null}"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
