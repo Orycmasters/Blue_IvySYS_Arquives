@@ -6,8 +6,10 @@
 
 package encode.source.SystemCode;
 
+import encode.source.Connection.Connect;
 import javax.faces.bean.ManagedBean;
 import javax.faces.event.ActionEvent;
+import java.sql.*;
 
 /**
  *
@@ -23,6 +25,7 @@ public class UserBean {
     private String login;
     private String password;
     private String CPF;
+    Connection conn = null;
 
     public String getName() {
         return name;
@@ -81,8 +84,12 @@ public class UserBean {
     }
     
     
-    public void send(ActionEvent send){
+    public void send(ActionEvent send) throws SQLException{
     
+        Connect con = new Connect();
+        conn = con.getConnection();
+        
+        
         this.setName(this.getName());
         this.setLogin(this.getLogin());
         this.setPassword(this.getPassword());

@@ -21,9 +21,9 @@ public class Connect {
     
     }
     
-    public static Connect getConnection() throws ClassNotFoundException, SQLException{
+    public static Connection getConnection() throws SQLException {
     
-        Connect con = null;
+        Connection con = null;
         
         
         try{
@@ -37,7 +37,7 @@ public class Connect {
             String username = "root";
             String password = "oryc666";
             
-            con = (Connect) DriverManager.getConnection(url, username, password);
+            con = DriverManager.getConnection(url, username, password);
             
             if (con != null) {
                 status = ("STATUS---> Conectado com sucesso.");
