@@ -3,47 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package encode.source.SystemCode;
 
-import encode.source.Connection.ConFactory;
-import javax.faces.bean.ManagedBean;
-import javax.faces.event.ActionEvent;
+import encode.source.Connection.Connect;
+import encode.source.Control.InsertData;
 import java.sql.*;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.event.ActionEvent;
 
 /**
  *
  * @author Zetta™
  */
-
 @ManagedBean
+@SessionScoped
 public class UserBean {
-    private String name;
-    private String adress;
+
+    private String nome;
     private String email;
-    private String phone;
+    private String telefone;
     private String login;
     private String password;
-    private String CPF;
-    
-    public UserBean() throws SQLException{
-    Connection con = ConFactory.getConnection();
+    private String cpf;
+    Connection conn = null;
+
+    InsertData in = new InsertData();
+
+    public UserBean() {
+        Connect c = new Connect();
+        conn = c.openCon();
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAdress() {
-        return adress;
-    }
-
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -54,12 +51,12 @@ public class UserBean {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public String getLogin() {
@@ -78,24 +75,24 @@ public class UserBean {
         this.password = password;
     }
 
-    public String getCPF() {
-        return CPF;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
-    
-    
-    public void send(ActionEvent send) throws SQLException{
-   
-        this.setName(this.getName());
-        this.setLogin(this.getLogin());
-        this.setPassword(this.getPassword());
-        this.setCPF(this.getCPF());
-        this.setAdress(this.getAdress());
-        this.setEmail(this.getEmail());
-        this.setPhone(this.getPhone());
+
+    public void send(ActionEvent send) throws SQLException {
+
+        String nome = this.getNome();
+        String login = this.getLogin();
+        String password = this.getPassword();
+        String cpf = this.getCpf();
+        String email = this.getEmail();
+        String telefone = this.getTelefone();
+
+        in.NewUser(nome, login, password, telefone, cpf, email);
     }
-    
+
 }

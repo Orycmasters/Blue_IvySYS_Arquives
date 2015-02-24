@@ -14,7 +14,7 @@ import java.sql.SQLException;
  */
 public class ConTest {
     public static void main(String[] args) throws SQLException {
-        Connection conn = new ConFactory().getConnection();
+        Connection conn = new Connect().openCon();
         System.out.println("Conexão aberta!");
         conn.close();
     }

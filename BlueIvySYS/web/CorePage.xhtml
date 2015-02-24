@@ -9,25 +9,23 @@
         <h:form>
             <h:panelGrid columns="2">
                 <h:outputText value="Nome Completo: " />
-                <h:inputText value="#{userBean.name}" />
+                <h:inputText value="#{userBean.nome}" />
                 <h:outputText value="Login: " />
                 <h:inputText value="#{userBean.login}" />
                 <h:outputText value="Password: " />
                 <h:inputSecret value="#{userBean.password}" redisplay="true"/>
                 <h:outputText value="CPF (Descrito dessa forma: xxx.xxx.xxx-xx): " />
-                <h:inputText value="#{userBean.CPF}" />
-                <h:outputText value="Endereço Completo (Rua, Número, Bairro, Cidade, CEP, Estado): " />
-                <h:inputText value="#{userBean.adress}" />
+                <h:inputText value="#{userBean.cpf}" />
                 <h:outputText value="Email: " />
                 <h:inputText value="#{userBean.email}" />
                 <h:outputText value="Telefone (Informe DDD): " />
-                <h:inputText value="#{userBean.phone}" />
+                <h:inputText value="#{userBean.telefone}" />
                 <h:commandButton value="Enviar"
                     actionListener="#{userBean.send}"/>
                 <br/>
                 
-                <h:outputText value="Seja Bem vindo(a), #{userBean.name}"
-                    rendered="#{userBean.name != null}"/>
+                <h:outputText value="Seja Bem vindo(a), #{userBean.nome}"
+                    rendered="#{userBean.nome != null}"/>
             </h:panelGrid>
         </h:form>
     </h:body>

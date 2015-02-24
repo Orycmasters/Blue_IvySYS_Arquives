@@ -6,60 +6,44 @@
 
 package encode.source.Connection;
 
-import java.sql.Connection;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 /**
  *
  * @author Zetta™
  */
 public class Connect {
-    public static String status = "Não conectado..";
-    
-    public Connect(){
-    
+
+    Connection con;
+    private Connection eCon;
+    private Statement stmt;
+
+    public Connect() {
     }
-    
-    public static Connection getConnection() throws SQLException {
-    
-        Connection con = null;
-        
-        
-        try{
-            
-            String driverName = "com.mysql.jdbc.Driver";
-            Class.forName(driverName);
-            
-            String serverName = "localhost";
-            String mydatabase = "blue_ivysystem";
-            String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
-            String username = "root";
-            String password = "oryc666";
-            
-            con = DriverManager.getConnection(url, username, password);
-            
-            if (con != null) {
-                status = ("STATUS---> Conectado com sucesso.");
-            
-            }else {
-                status = ("STATUS---> Não foi possível realizar a conexão");
-            
-            }
-        return con;
-        
-        }catch (ClassNotFoundException e) {
-        
-            System.out.println("O driver especificado não foi encontrado.");
+
+    public Connection openCon() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/blue_ivysystem";
+            con = (Connection) DriverManager.getConnection(url, "root", "oryc666");
+            System.out.println("Conexão efetuada com sucesso");
+            return con;
+        } catch (Exception e) {
+            System.out.println("Erro ao conectar com Banco de Dados:");
+            e.printStackTrace();
             return null;
         }
-        
     }
-    
-    public static String statusConection() {
 
-        return status;
+    public void closeCon() {
+        try {
+            con.close();
+            System.out.println("Conexao finalizada com sucesso");
 
+        } catch (Exception e) {
+            System.out.println("Erro ao fechar conexao com banco " + e.getMessage());
+        }
     }
-       
 }
