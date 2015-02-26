@@ -35,7 +35,11 @@ public class Connect {
             String mydatabase = "blue_ivysystem";
             String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
             String username = "root";
+<<<<<<< HEAD
             String password = "123456";
+=======
+            String password = "oryc666";
+>>>>>>> effd3790b486f10ea6768d944761a56e55d83909
             
             con = DriverManager.getConnection(url, username, password);
             
