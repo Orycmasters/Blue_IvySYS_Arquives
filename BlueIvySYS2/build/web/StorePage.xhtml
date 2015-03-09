@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Tela da Loja</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText value="Nome Completo: " />
+                <h:inputText value="#{userBean.usuario.nome}" />
+                <h:outputText value="Login: " />
+                <h:inputText value="#{userBean.usuario.login}" />
+                <h:outputText value="Password: " />
+                <h:inputSecret value="#{userBean.usuario.password}" redisplay="true"/>
+                <h:outputText value="Telefone (Informe DDD): " />
+                <h:inputText value="#{userBean.usuario.telefone}" />
+                <h:outputText value="CPF (Descrito dessa forma: xxx.xxx.xxx-xx): " />
+                <h:inputText value="#{userBean.usuario.cpf}" />
+                <h:outputText value="Email: " />
+                <h:inputText value="#{userBean.usuario.email}" />
+
+                <h:commandButton value="Enviar" action="#{userBean.inserir()}"/>
+
+                <br/>
+                <h:outputText value="Seja Bem vindo(a), #{userBean.usuario.nome}"
+                              rendered="#{userBean.usuario.nome != null}"/>
+
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
