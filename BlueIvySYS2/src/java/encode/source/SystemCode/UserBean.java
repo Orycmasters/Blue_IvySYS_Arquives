@@ -10,8 +10,10 @@ package encode.source.SystemCode;
 import encode.source.DAO.UserDAO;
 import encode.source.javaBean.User;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.event.ActionEvent;
+import javax.faces.bean.ViewScoped;
 
 /**
  *
@@ -19,6 +21,7 @@ import javax.faces.event.ActionEvent;
  */
 
 @ManagedBean
+@ViewScoped
 public class UserBean {
     private User usuario = new User();
     private UserDAO userdao = new UserDAO();
@@ -53,6 +56,16 @@ public class UserBean {
         
         userdao.DeleteUser(usuario);
     
+    }
+    
+    public List<User> recuperarUser() {
+        
+        ArrayList<User> lista = new ArrayList<User>();
+        
+        usuario.setCpf(usuario.getCpf());
+        
+        userdao.RecuperarUser(usuario);
+        return lista;
     }
     
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+ 
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Meu Sistema</title>
+        <style type="text/css">
+            body {background-color:#00FFFF; font-size: 12px}
+        </style>
+    </h:head>
+    <h:body>
+        <div align="center">
+            <p:layout style="min-width:900px;max-width:102px;min-height:700px"> 
+                <p:layoutUnit position="north" size="316"> 
+                    <h:graphicImage url="/resources/imagens/carol-burgo-camisetas-prosa.jpg" />
+                </p:layoutUnit> 
+ 
+                <p:layoutUnit position="west" size="230"> 
+                    <ui:insert name="menu">
+                        <h:form>
+                            <p:menu style="width: 200px">
+                                <p:submenu label="Menu">
+                                    <p:menuitem value="Home" icon="ui-icon-key" action="Home.xhtml" />
+                                    <p:menuitem value="Login" icon="ui-icon-key" /> 
+                                    <p:menuitem value="Cadastre-se" icon="ui-icon-contact" action="CorePage.xhtml" />        
+                                </p:submenu>
+                            </p:menu>
+                            <p:menu style="width: 200px">
+                            <p:submenu label="Categorias">
+                                    <p:menuitem value="Feminino"  /> 
+                                    <p:menuitem value="Masculino"  />        
+                                </p:submenu>
+                                </p:menu>
+                        </h:form>
+                    </ui:insert>
+                </p:layoutUnit> 
+                <p:layoutUnit position="center"> 
+                    <ui:insert name="centro">
+                       
+                    </ui:insert>
+                </p:layoutUnit> 
+            </p:layout> 
+        </div>
+    </h:body>
+</html>
+

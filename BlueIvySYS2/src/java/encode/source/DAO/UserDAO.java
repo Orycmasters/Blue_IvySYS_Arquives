@@ -71,4 +71,21 @@ public class UserDAO {
         }
         return false;
     }
+    
+    public boolean RecuperarUser(User usuario){
+        
+        String sql = "SELECT * FROM blue_ivysystem.usuario WHERE cpf = ?;";
+        try{
+            
+            pstm = conexao.prepareStatement(sql);
+            pstm.setString(1, usuario.getCpf());
+            pstm.executeUpdate();
+            pstm.close();
+        
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return false;
+    }
 }

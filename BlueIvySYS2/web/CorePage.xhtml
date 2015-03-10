@@ -1,36 +1,41 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Tela de Login e Criação de User</title>
-    </h:head>
-    <h:body>
-        <h:form>
-            <h:panelGrid columns="2">
-                <h:outputText value="Nome Completo: " />
-                <h:inputText value="#{userBean.usuario.nome}" />
-                <h:outputText value="Login: " />
-                <h:inputText value="#{userBean.usuario.login}" />
-                <h:outputText value="Password: " />
-                <h:inputSecret value="#{userBean.usuario.password}" redisplay="true"
-                               maxlength="10" />
-                <h:outputText value="Telefone (Informe DDD): " />
-                <h:inputText value="#{userBean.usuario.telefone}" />
-                <h:outputText value="CPF (Descrito dessa forma: xxx.xxx.xxx-xx): " />
-                <h:inputText value="#{userBean.usuario.cpf}" maxlength="14"/>
-                <h:outputText value="Email: " />
-                <h:inputText value="#{userBean.usuario.email}" />
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:decorate template="welcomePrimefaces.xhtml">
+        <h:head>
+            <title>Tela de Login e Criação de User</title>
+        </h:head>
 
-                <h:commandButton value="Enviar" action="#{userBean.inserir()}"/>
-                <h:commandLink value="Deletar Cadastro" action="DelUserPage" />
+        <ui:define name="centro">
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="Nome Completo: " />
+                    <h:inputText value="#{userBean.usuario.nome}" />
+                    <h:outputText value="Login: " />
+                    <h:inputText value="#{userBean.usuario.login}" />
+                    <h:outputText value="Password: " />
+                    <h:inputSecret value="#{userBean.usuario.password}" redisplay="true"
+                                   maxlength="10" />
+                    <h:outputText value="Telefone (Informe DDD): " />
+                    <h:inputText value="#{userBean.usuario.telefone}" />
+                    <h:outputText value="CPF (Descrito dessa forma: xxx.xxx.xxx-xx): " />
+                    <h:inputText value="#{userBean.usuario.cpf}" maxlength="14"/>
+                    <h:outputText value="Email: " />
+                    <h:inputText value="#{userBean.usuario.email}" />
 
-                <br/>
-                <h:outputText value="Seja Bem vindo(a), #{userBean.usuario.nome}"
-                              rendered="#{userBean.usuario.nome != null}"/>
+                    <h:commandButton value="Enviar" action="#{userBean.inserir()}"/>
+                    <h:commandLink value="Deletar Cadastro" action="DelUserPage" />
 
-            </h:panelGrid>
-        </h:form>
-    </h:body>
+                    <br/>
+                    <h:outputText value="Seja Bem vindo(a), #{userBean.usuario.nome}"
+                                  rendered="#{userBean.usuario.nome != null}"/>
+
+                </h:panelGrid>
+            </h:form>
+        </ui:define>
+    </ui:decorate>
+
 </html>
 
