@@ -6,14 +6,16 @@
 package encode.source.DAO;
 
 import encode.source.Connection.ConnectionFactory;
+import encode.source.javaBean.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import encode.source.javaBean.User;
+import java.util.ArrayList;
 
 /**
- *liaradepaula@hotmail.com
+ * liaradepaula@hotmail.com
+ *
  * @author jaiany
  */
 public class UserDAO {
@@ -22,10 +24,9 @@ public class UserDAO {
     PreparedStatement pstm;
     ResultSet rs;
 
-    public UserDAO(){   
-          this.conexao = new ConnectionFactory().getConnection();
-          
-        
+    public UserDAO() {
+        this.conexao = new ConnectionFactory().getConnection();
+
     }
 
     public boolean Inserir(User usuario) throws SQLException, ClassNotFoundException {
@@ -47,45 +48,67 @@ public class UserDAO {
 
             }
 
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             ex.printStackTrace();
-         
-            
+
         }
-        
+
         return true;
     }
-    
-    public boolean DeleteUser(User usuario){
+
+    public boolean DeleteUser(User usuario) {
         String sql = "DELETE FROM blue_ivysystem.usuario WHERE cpf = ?;";
-        try{
-            
+        try {
+
             pstm = conexao.prepareStatement(sql);
             pstm.setString(1, usuario.getCpf());
             pstm.executeUpdate();
             pstm.close();
-        
-        }catch(Exception e){
+
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
         return false;
     }
-    
-    public boolean RecuperarUser(User usuario){
-        
+
+    public boolean RecuperarUser(User usuario) {
+
         String sql = "SELECT * FROM blue_ivysystem.usuario WHERE cpf = ?;";
-        try{
-            
+        try {
+
             pstm = conexao.prepareStatement(sql);
             pstm.setString(1, usuario.getCpf());
             pstm.executeUpdate();
             pstm.close();
-        
-        }catch(Exception e){
+
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
         return false;
     }
+
+    public ArrayList<User> ProcuraUser(User usuario) throws SQLException {
+
+        ArrayList<User> lista = new ArrayList<User>();
+
+        pstm.execute("SELECT * FROM blue_ivysystem.usuario WHERE '" + usuario.getCpf() + "'");
+        ResultSet result = pstm.getResultSet();
+
+        while (result.next()) {
+            User u = new User();
+            u.setNome(result.getString("nome"));
+            u.setLogin(result.getString("login"));
+            u.setPassword(result.getString("password"));
+            u.setTelefone(result.getString("telefone"));
+            u.setCpf(result.getString("cpf"));
+            u.setEmail(result.getString("email"));
+            lista.add(u);
+        }
+
+        return lista;
+
+    }
+
 }

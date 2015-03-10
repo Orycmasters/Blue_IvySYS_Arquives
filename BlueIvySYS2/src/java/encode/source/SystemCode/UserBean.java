@@ -58,7 +58,7 @@ public class UserBean {
     
     }
     
-    public List<User> recuperarUser() {
+    public List<User> procuraUser() {
         
         ArrayList<User> lista = new ArrayList<User>();
         
@@ -67,5 +67,5 @@ public class UserBean {
         userdao.RecuperarUser(usuario);
         return lista;
     }
-    
+     
 }

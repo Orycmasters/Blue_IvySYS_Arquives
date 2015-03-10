@@ -4,7 +4,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core">
- 
+
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Meu Sistema</title>
@@ -18,29 +18,32 @@
                 <p:layoutUnit position="north" size="316"> 
                     <h:graphicImage url="/resources/imagens/carol-burgo-camisetas-prosa.jpg" />
                 </p:layoutUnit> 
- 
+
                 <p:layoutUnit position="west" size="230"> 
                     <ui:insert name="menu">
                         <h:form>
                             <p:menu style="width: 200px">
                                 <p:submenu label="Menu">
-                                    <p:menuitem value="Home" icon="ui-icon-key" action="Home.xhtml" />
+                                    <p:menuitem value="Home" icon="ui-icon-home" action="Home.xhtml" />
                                     <p:menuitem value="Login" icon="ui-icon-key" /> 
                                     <p:menuitem value="Cadastre-se" icon="ui-icon-contact" action="CorePage.xhtml" />        
                                 </p:submenu>
                             </p:menu>
                             <p:menu style="width: 200px">
-                            <p:submenu label="Categorias">
-                                    <p:menuitem value="Feminino"  /> 
-                                    <p:menuitem value="Masculino"  />        
+                                <p:submenu label="Categorias">
+                                    <p:menuitem value="Feminino" /> 
+                                    <p:menuitem value="Masculino" />        
                                 </p:submenu>
-                                </p:menu>
+                            </p:menu>
+                            <p:menu style="width: 200px">
+                                <p:menuitem value="Carrinho" icon="ui-icon-cart" /> 
+                            </p:menu>
                         </h:form>
                     </ui:insert>
                 </p:layoutUnit> 
                 <p:layoutUnit position="center"> 
                     <ui:insert name="centro">
-                       
+
                     </ui:insert>
                 </p:layoutUnit> 
             </p:layout> 
